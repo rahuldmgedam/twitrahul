@@ -3,8 +3,8 @@
     "builds":[
         {
             "src":"./index.js",
-            "use":"@vercel/code",
-            "buildCommand": "next build"
+            "use":"@vercel/code"
+        
         }
     ],
     "routes":[
