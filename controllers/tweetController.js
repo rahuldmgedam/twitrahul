@@ -108,3 +108,13 @@ export const getAllFollowingTweets = async (req,res)=>{
         console.log(error);
       }
 }
+
+export const AllTweets =  async (req,res) => {
+  try {
+    const response = await Tweet.find({});
+    res.json(response);
+    console.log(response)
+  } catch (err) {
+    res.json(err);
+  }
+}

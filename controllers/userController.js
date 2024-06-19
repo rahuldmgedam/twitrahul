@@ -198,3 +198,13 @@ export const unfollow = async (req, res) => {
     console.log(error);
   }
 };
+
+export const getAllUsers =  async (req,res) => {
+  try {
+    const response = await User.find({});
+    res.json(response);
+    console.log(response)
+  } catch (err) {
+    res.json(err);
+  }
+}
