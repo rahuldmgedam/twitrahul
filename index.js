@@ -10,7 +10,7 @@ dotenv.config({
     path:".env"
 }) 
 
-databaseConnection()
+databaseConnection();
 const app = express();
 
 app.use(express.urlencoded({
@@ -20,6 +20,7 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 app.use(cookieParser());
+
 const corsOptions = {
   origin: "http://localhost:3001",
   credentials:true
@@ -30,9 +31,7 @@ app.use("/api/v1/user",userRoute)
 app.use("/api/v1/tweet",tweetRoute)
 
 app.get("/home",(req,res)=>{
-     res.status(200).json({
-       message : "from twitter backend"
-     }) 
+     res.status(200).send("<h1>twitter server<h1>")
 })
 
 const PORT = process.env.PORTtr || 3003;

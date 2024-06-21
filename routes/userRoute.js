@@ -12,7 +12,7 @@ router.route("/profile/:id").get(isAuthenticated,getMyProfile)
 router.route("/otheruser/:id").get(isAuthenticated,getOtherUsers)
 router.route("/follow/:id").post(isAuthenticated,follow)
 router.route("/unfollow/:id").post(isAuthenticated,unfollow)
-router.route("/allusers").get(getAllUsers)
+router.route("/allusers").get(isAuthenticated,getAllUsers)
 
 
 export default router;
